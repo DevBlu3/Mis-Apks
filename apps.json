@@ -1,0 +1,35 @@
+[
+  {
+    "id": "com_priv_tv",
+    "nombre": "CTV",
+    "package_name": "com.priv.tv",
+    "version_code": 1,
+    "version_name": "1.0",
+    "icono_url": "https://raw.githubusercontent.com/tu_usuario/tu_repo/main/iconos/com.priv.tv.png",
+    "tipo": "apk",
+    "url_apk": "https://github.com/DevBlu3/Mis-Apks/releases/download/v.1.9.23/CTV.apk",
+    "descripcion": "Versión 1.0 instalable"
+  },
+  {
+    "id": "com_future_tv",
+    "nombre": "FTV",
+    "package_name": "com.future.tv",
+    "version_code": 15,
+    "version_name": "1.5",
+    "icono_url": "https://raw.githubusercontent.com/tu_usuario/tu_repo/main/iconos/com.future.tv.png",
+    "tipo": "apk",
+    "url_apk": "https://github.com/DevBlu3/Mis-Apks/releases/download/v.1.9.23/FTV.apk",
+    "descripcion": "Versión 1.5 instalable"
+  },
+  {
+    "id": "ar_com_flow_androidtv",
+    "nombre": "Flow ATV",
+    "package_name": "ar.com.flow.androidtv",
+    "version_code": 905080000,
+    "version_name": "4.108.0",
+    "icono_url": "https://raw.githubusercontent.com/tu_usuario/tu_repo/main/iconos/ar.com.flow.androidtv.png",
+    "tipo": "bundle",
+    "url_apk": "https://github.com/DevBlu3/Mis-Apks/releases/download/v.1.9.23/Flow.ATV.7.Sep.apkm",
+    "descripcion": "Versión 4.108.0 instalable"
+  }
+]
