@@ -23,13 +23,13 @@
   },
   {
     "id": "ar_com_flow_androidtv",
-    "nombre": "Flow ATV",
+    "nombre": "Flow TV",
     "package_name": "ar.com.flow.androidtv",
     "version_code": 905080000,
-    "version_name": "4.108.0",
+    "version_name": "4.109.1",
     "icono_url": "https://raw.githubusercontent.com/tu_usuario/tu_repo/main/iconos/ar.com.flow.androidtv.png",
     "tipo": "bundle",
-    "url_apk": "https://github.com/DevBlu3/Mis-Apks/releases/download/v.1.9.23/Flow.ATV.7.Sep.apkm",
+    "url_apk": "https://github.com/DevBlu3/Mis-Apks/releases/download/v.1.9.23/Flow.TV.24.Sep.apkm",
     "descripcion": "Versión 4.108.0 instalable"
   }
 ]
