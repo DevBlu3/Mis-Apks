@@ -5,10 +5,10 @@
     "package_name": "com.priv.tv",
     "version_code": 1,
     "version_name": "1.0",
-    "icono_url": "https://raw.githubusercontent.com/tu_usuario/tu_repo/main/iconos/com.priv.tv.png",
+    "icono_url": "https://raw.githubusercontent.com/DevBlu3/Mis-Apks/refs/heads/main/iconos/com.priv.tv.png",
     "tipo": "apk",
     "url_apk": "https://github.com/DevBlu3/Mis-Apks/releases/download/v.1.9.23/CTV.apk",
-    "descripcion": "Versión 1.0 instalable"
+    "descripcion": "TV Digital Premium, Pack Futbol, Peliculas y Series"
   },
   {
     "id": "com_future_tv",
@@ -16,10 +16,10 @@
     "package_name": "com.future.tv",
     "version_code": 15,
     "version_name": "1.5",
-    "icono_url": "https://raw.githubusercontent.com/tu_usuario/tu_repo/main/iconos/com.future.tv.png",
+    "icono_url": "https://raw.githubusercontent.com/DevBlu3/Mis-Apks/refs/heads/main/iconos/com.future.tv.png",
     "tipo": "apk",
     "url_apk": "https://github.com/DevBlu3/Mis-Apks/releases/download/v.1.9.23/FTV.apk",
-    "descripcion": "Versión 1.5 instalable"
+    "descripcion": "TV Digital Premium, Pack Futbol, Peliculas y Series"
   },
   {
     "id": "ar_com_flow_androidtv",
@@ -27,9 +27,9 @@
     "package_name": "ar.com.flow.androidtv",
     "version_code": 905080000,
     "version_name": "4.109.1",
-    "icono_url": "https://raw.githubusercontent.com/tu_usuario/tu_repo/main/iconos/ar.com.flow.androidtv.png",
+    "icono_url": "https://raw.githubusercontent.com/DevBlu3/Mis-Apks/refs/heads/main/iconos/ar.com.flow.androidtv.png",
     "tipo": "bundle",
     "url_apk": "https://github.com/DevBlu3/Mis-Apks/releases/download/v.1.9.23/Flow.TV.24.Sep.apkm",
-    "descripcion": "Versión 4.108.0 instalable"
+    "descripcion": "TV"
   }
 ]
