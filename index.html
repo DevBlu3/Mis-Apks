@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AlienStore</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { 
+            background-color: #0f111a; 
+            color: #ffffff; 
+            font-family: system-ui, -apple-system, sans-serif; 
+            margin: 0; 
+            padding: 30px; 
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1000px;
+            margin: 0 auto 30px auto;
+            border-bottom: 2px solid #222639;
+            padding-bottom: 20px;
+        }
+        h1 { color: #00ffcc; margin: 0; font-size: 28px; letter-spacing: 1px; }
+        .btn-soporte { 
+            background: #ff3b3b; 
+            color: #fff; 
+            padding: 12px 20px; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            text-decoration: none;
+            box-shadow: 0 4px 12px rgba(255, 59, 59, 0.3);
+            transition: 0.2s;
+        }
+        .btn-soporte:focus, .btn-soporte:hover {
+            background: #ff5252;
+            transform: scale(1.05);
+            outline: 3px solid #fff;
+        }
+        .grid { 
+            display: flex; 
+            flex-wrap: wrap; 
+            gap: 25px; 
+            justify-content: center; 
+            max-width: 1000px;
+            margin: 0 auto;
+        } 
+        .card { 
+            background: #1a1d2e; 
+            border-radius: 12px; 
+            padding: 20px; 
+            width: 280px; 
+            text-align: center; 
+            border: 2px solid #2a2f4c; 
+        }
+        .icon-container {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 15px auto;
+            background: #2a2f4c;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        img { width: 100%; height: 100%; object-fit: cover; }
+        h3 { margin: 0 0 5px 0; font-size: 20px; color: #fff; }
+        .version { font-size: 12px; color: #00ffcc; margin-bottom: 10px; font-weight: bold; }
+        p { font-size: 13px; color: #94a3b8; height: 40px; overflow: hidden; margin: 0 0 15px 0; line-height: 1.4; }
+        
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .btn { 
+            display: block; 
+            width: 100%;
+            padding: 10px; 
+            text-decoration: none; 
+            font-weight: bold; 
+            border-radius: 6px; 
+            font-size: 14px;
+            transition: 0.2s;
+            cursor: pointer;
+            border: none;
+        }
+        .btn-instalar { 
+            background: #00ffcc; 
+            color: #0b0d14; 
+        }
+        .btn-instalar:focus, .btn-instalar:hover {
+            background: #33ffd6;
+            outline: 2px solid #fff;
+        }
+        .btn-ajustes { 
+            background: #2a2f4c; 
+            color: #cbd5e1; 
+        }
+        .btn-ajustes:focus, .btn-ajustes:hover {
+            background: #3b4268;
+            color: #fff;
+            outline: 2px solid #fff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>AlienStore</h1>
+        <a href="rustdesk://" class="btn-soporte">Soporte Técnico Remoto</a>
+    </header>
+
+    <div class="grid" id="app-list">
+        <!-- Las apps se cargarán solas desde tu apps.json -->
+    </div>
+
+    <script>
+        fetch('apps.json')
+            .then(response => response.json())
+            .then(data => {
+                const container = document.getElementById('app-list');
+                data.forEach(app => {
+                    const card = document.createElement('div');
+                    card.className = 'card';
+                    card.innerHTML = `
+                        <div class="icon-container">
+                            <img src="${app.icono_url}" alt="${app.nombre}" onerror="this.style.display='none'">
+                        </div>
+                        <h3>${app.nombre}</h3>
+                        <div class="version">Versión ${app.version_name}</div>
+                        <p>${app.descripcion}</p>
+                        <div class="btn-container">
+                            <a href="${app.url_apk}" class="btn btn-instalar">Instalar / Actualizar</a>
+                            <button class="btn btn-ajustes" onclick="window.location.href='intent://details?id=${app.package_name}#Intent;action=android.settings.APPLICATION_DETAILS_SETTINGS;scheme=package;end;'">Configurar / Info</button>
+                        </div>
+                    `;
+                    container.appendChild(card);
+                });
+            })
+            .catch(error => {
+                console.error('Error cargando el catálogo:', error);
+                document.getElementById('app-list').innerHTML = '<p style="color:red;">Error al cargar las aplicaciones. Revisa tu apps.json.</p>';
+            });
+    </script>
+</body>
+</html>
