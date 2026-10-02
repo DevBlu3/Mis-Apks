@@ -88,6 +88,7 @@
             transition: 0.2s;
             cursor: pointer;
             border: none;
+            text-align: center;
         }
         .btn-instalar { 
             background: #00ffcc; 
@@ -124,9 +125,16 @@
             .then(response => response.json())
             .then(data => {
                 const container = document.getElementById('app-list');
+                container.innerHTML = '';
+                
                 data.forEach(app => {
                     const card = document.createElement('div');
                     card.className = 'card';
+
+                    // Verificamos si la app ya fue instalada/descargada previamente en este dispositivo
+                    const isInstalled = localStorage.getItem(`app_installed_${app.package_name}`) === 'true';
+                    const textoBoton = isInstalled ? 'Actualizar' : 'Instalar';
+
                     card.innerHTML = `
                         <div class="icon-container">
                             <img src="${app.icono_url}" alt="${app.nombre}" onerror="this.style.display='none'">
@@ -135,11 +143,20 @@
                         <div class="version">Versión ${app.version_name}</div>
                         <p>${app.descripcion}</p>
                         <div class="btn-container">
-                            <a href="${app.url_apk}" class="btn btn-instalar">Instalar / Actualizar</a>
-                            <button class="btn btn-ajustes" onclick="window.location.href='intent://details?id=${app.package_name}#Intent;action=android.settings.APPLICATION_DETAILS_SETTINGS;scheme=package;end;'">Configurar / Info</button>
+                            <a href="${app.url_apk}" class="btn btn-instalar" data-package="${app.package_name}">${textoBoton}</a>
+                            <a href="intent://#Intent;action=android.settings.APPLICATION_DETAILS_SETTINGS;package=${app.package_name};end;" class="btn btn-ajustes">Configurar / Info</a>
                         </div>
                     `;
                     container.appendChild(card);
+                });
+
+                // Lógica para cambiar el botón a "Actualizar" cuando el usuario hace clic en instalar
+                document.querySelectorAll('.btn-instalar').forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        const pkg = e.target.getAttribute('data-package');
+                        localStorage.setItem(`app_installed_${pkg}`, 'true');
+                        e.target.textContent = 'Actualizar';
+                    });
                 });
             })
             .catch(error => {
