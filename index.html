@@ -144,7 +144,7 @@
                         <p>${app.descripcion}</p>
                         <div class="btn-container">
                             <a href="${app.url_apk}" class="btn btn-instalar" data-package="${app.package_name}">${textoBoton}</a>
-                            <a href="intent://#Intent;action=android.settings.APPLICATION_DETAILS_SETTINGS;package=${app.package_name};end;" class="btn btn-ajustes">Configurar / Info</a>
+                            <a href="intent://#Intent;action=android.settings.APPLICATION_DETAILS_SETTINGS;scheme=package;package=${app.package_name};end;" class="btn btn-ajustes">Configurar / Info</a>
                         </div>
                     `;
                     container.appendChild(card);
