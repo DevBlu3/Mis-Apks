@@ -1,0 +1,14 @@
+{
+  "background_color": "#0f111a",
+  "dir": "ltr",
+  "display": "standalone",
+  "name": "AlienStore",
+  "orientation": "any",
+  "scope": "/",
+  "short_name": "AlienStore",
+  "start_url": "/",
+  "theme_color": "#00ffcc",
+  "id": "com.alienstore.app",
+  "description": "AlienStore - Tu aplicación de contenido y streaming para Android TV.",
+  "lang": "es"
+}
